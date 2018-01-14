@@ -1,29 +1,27 @@
-<div class="container" id="car-detail">
+<div class="container">
   <div class="row">
-    <div class="row">
-      <div class="col-xs-12" id="car-detail-header"> {{ car.manufacturer | uppercase }} {{ car.model }} </div>
-    </div>
-      <div class="col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-md-offset-3">
-        <img id="car-image-detail" src="./../../../assets/{{ car.img }}">
-      </div>
-    </div>
-  <div class="row">
-      <div class="col-xs-12" id="car-detail-price"> {{ car.price }}€ </div>
-  </div>
-  <div class="row">
-      <div class="col-xs-6 col-xs-offset-3">
-         <ul class="list-group">
-           <li
-            class="list-group-item"
-            *ngFor="let quality of car.quality">
-            {{ quality.name | uppercase }}
-              <span class="glyphicon glyphicon-star rating-star" [ngClass]="getRating(5, quality)"></span>
-              <span class="glyphicon glyphicon-star rating-star" [ngClass]="getRating(4, quality)"></span>
-              <span class="glyphicon glyphicon-star rating-star" [ngClass]="getRating(3, quality)"></span>
-              <span class="glyphicon glyphicon-star rating-star" [ngClass]="getRating(2, quality)"></span>
-              <span class="glyphicon glyphicon-star rating-star" [ngClass]="getRating(1, quality)"></span>
-           </li>
-         </ul>
+      <div class="col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-md-offset-3"  id="car-detail">
+          <div class="col-xs-12" id="car-detail-header"> {{ car.manufacturer | uppercase }} {{ car.model }} </div>
+          <div class="col-xs-12">
+            <img id="car-image-detail" src="./../../../assets/{{ car.img }}">
+          </div>
+          <div class="col-xs-12" id="car-detail-price">
+            {{ car.price }}€
+          </div>
+          <div class="col-xs-12">
+            <ul class="list-group">
+              <li
+              class="list-group-item"
+              *ngFor="let quality of car.quality">
+              {{ quality.name | uppercase }}
+                <span class="glyphicon glyphicon-star rating-star" [ngClass]="getRating(5, quality)"></span>
+                <span class="glyphicon glyphicon-star rating-star" [ngClass]="getRating(4, quality)"></span>
+                <span class="glyphicon glyphicon-star rating-star" [ngClass]="getRating(3, quality)"></span>
+                <span class="glyphicon glyphicon-star rating-star" [ngClass]="getRating(2, quality)"></span>
+                <span class="glyphicon glyphicon-star rating-star" [ngClass]="getRating(1, quality)"></span>
+              </li>
+            </ul>
+          </div>
       </div>
   </div>
 </div>
