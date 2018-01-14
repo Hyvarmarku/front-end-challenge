@@ -1,0 +1,26 @@
+<div class="container" id="car-detail">
+  <div class="row">
+    <div class="row">
+      <div class="col-xs-12" id="car-detail-header"> {{ car.manufacturer }} {{ car.model }} </div>
+    </div>
+      <div class="col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-md-offset-3">
+        <img id="car-image-detail" src="./../../../assets/{{ car.img }}">
+      </div>
+    </div>
+  <div class="row">
+      <div class="col-xs-12" id="car-detail-price"> {{ car.price }}€ </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12">
+         <ul class="list-group">
+           <li
+            class="list-group-item"
+            *ngFor="let quality of car.quality">
+            {{ quality.name }} - {{ quality.rating }}
+           </li>
+         </ul>
+      </div>
+  </div>
+</div>
+
+

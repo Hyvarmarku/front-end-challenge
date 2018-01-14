@@ -1,0 +1,14 @@
+<div class="car-item">
+  <a [routerLink]="[index]">
+    <div class="col-xs-12 col-sm-6 col-md-4 list-group-item">
+      <div class="pull-left">
+          <h4 class="list-group-item-heading"> {{ car.manufacturer }} </h4>
+          <p class="list-group-item-text">{{ car.model }}</p>
+      </div>
+      <span class="pull-right">
+        <img src="./../../../assets/{{car.img}}" alt="" class="img-responsive car-image-small">
+      </span>
+    </div>
+  </a>
+</div>
+

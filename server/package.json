@@ -1,0 +1,14 @@
+{
+  "name": "plugit-challenge-frontend-node",
+  "version": "1.0.0",
+  "description": "plugit",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "cors": "^2.8.4",
+    "body-parser": "^1.18.2"
+  }
+}
