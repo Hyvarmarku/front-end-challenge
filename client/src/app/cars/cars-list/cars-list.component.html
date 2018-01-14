@@ -6,14 +6,23 @@
   </div>
 </div>
 <div class="container">
-  <div class="col-xs-10 col-sm-6 col-md-6 col-xs-offset-1 col-sm-offset-3 col-md-offset-3" >
-    <input type="text" class="form-control" [(ngModel)]="filteredString">
+  <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-sm-offset-3">
+          <label for="local">Use Server Filtering</label>
+            <input type="checkbox" name="serverFilter" id="serverFilter" (change)="onCheck()">
+          </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-sm-offset-3" id="cars-filter">
+          <input #filterInput type="text" class="form-control" [(ngModel)]="filteredString" placeholder="Type here to filter...">
+        </div>
+        <div class="col-xs-1 col-md-2 col-xs-offset-5 col-md-offset-0">
+            <button class="btn btn-primary" (click)="filter(filterInput.value)">Filter</button>
+        </div>
+      </div>
   </div>
-</div>
 <div class="container">
   <div class="row">
     <app-car-item
-      *ngFor="let car of cars | carsFilter:filteredString ; let i = index"
+      *ngFor="let car of cars | carsFilter:filteredString:localFilter ; let i = index"
       [car]="car"
       [index]="i"></app-car-item>
   </div>

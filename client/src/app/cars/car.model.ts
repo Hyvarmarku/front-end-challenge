@@ -1,5 +1,5 @@
 
-interface Quality {
+export interface Quality {
   name: string;
   rating: number;
 }

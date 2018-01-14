@@ -37,11 +37,21 @@ export class CarsService {
             (result: Car[]) => {
               resolve(result[index]);
             },
-            error => resolve(new Car())
+            error => reject(error)
           );
       }
     });
 
     return carPromise;
+  }
+
+  // Used if filtering method is changed to server filtering. Returns an array of cars
+  // based on the given parameter (s)
+  getCarFromServer(s: string) {
+    this.serverService.fetchCar(s)
+      .subscribe((response: Car[]) => {
+        this.cars = response;
+        this.carsUpdatedEvent.next(this.cars);
+    }, error => console.log(error));
   }
 }

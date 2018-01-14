@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../car.model';
-import { CarsService } from '../cars.service';
 import { ActivatedRoute, Params } from '@angular/router';
+
+import { Car, Quality } from '../car.model';
+import { CarsService } from '../cars.service';
 
 @Component({
   selector: 'app-car-detail',
@@ -19,5 +20,12 @@ export class CarDetailComponent implements OnInit {
       .subscribe((data: { car: Car}) => {
         this.car = data.car;
       });
+  }
+
+  getRating(index: number, quality: Quality) {
+    if (index <= quality.rating) {
+      return 'active-star';
+    }
+    return '';
   }
 }
